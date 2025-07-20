@@ -10,7 +10,7 @@ export enum Status {
 interface IStatusLabelProps {
   children: React.ReactNode;
   status: Status;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 const StatusLabel = ({ children, status, disabled }: IStatusLabelProps) => {

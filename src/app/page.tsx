@@ -1,4 +1,5 @@
-import StatusLabel, { Status } from './components/StatusLabel/status-label';
+import AddCompanyButton from './components/AddCompanyButton/AddCompanyButton';
+import StatusLabel, { Status } from './components/StatusLabel/StatusLabel';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <StatusLabel status={Status.NotActive}>Not active</StatusLabel>
       <StatusLabel status={Status.Pending}>Pending</StatusLabel>
       <StatusLabel status={Status.Suspended}>Suspended</StatusLabel>
+      <AddCompanyButton />
     </main>
   );
 }
