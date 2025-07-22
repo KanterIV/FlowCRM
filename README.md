@@ -15,13 +15,13 @@
 
 ```json
 {
-  "email": **_string_**,
-  "password": **_string_**,
-  "telegram": **_string_**,
-  "whatsapp": **_string_**,
-  "promoCode": **_string_**,
-  "referralCode": **_string_**,
-  "keitaro_subid": **_string_**
+  "email": _string_,
+  "password": _string_,
+  "telegram": _string_,
+  "whatsapp": _string_,
+  "promoCode": _string_,
+  "referralCode": _string_,
+  "keitaro_subid": _string_
 }
 ```
 
@@ -29,11 +29,11 @@
 
 ```json
 {
-  "message": **_string_**,
-  "success": boolean,
+  "message": _string_,
+  "success": true,
   "data": {
-    "email": **_string_**,
-    "userId": **_string_**
+    "email": _string_,
+    "userId": _string_
   }
 }
 ```
