@@ -14,15 +14,15 @@
 **📥 Request Body**:
 
 ```ts
-{
-  email: string;
-  password: string;
-  telegram: string;
-  whatsapp: string;
-  promoCode?: string;
-  referralCode?: string;
-  keitaro_subid?: string;
+{  email: string,
+  password: string,
+  telegram: string,
+  whatsapp: string,
+  promoCode?: string,
+  referralCode?: string,
+  keitaro_subid?: string
 }
+
 ```
 
 **📥 Response**:
