@@ -197,3 +197,45 @@ _Пользовтель веривицирован_
   message: string,
 }
 ```
+
+6. ### 🔹 PATCH `/auth/reset-password/:token`
+
+Сброс пароля пользователя по ранее высланной ссылке. Проверяет JWT-токен из
+параметра `:token`, устанавливает новый пароль и удаляет токен из БД.
+
+**📥 Request Body**:
+
+```ts
+{
+  password: string,
+}
+```
+
+<br>
+
+**📤 Response**:
+
+```ts
+{
+  message: string,
+}
+```
+
+7. ### 🔹 POST `/auth/logout`
+
+Выход из системы.
+
+```ts
+{
+  success: boolean,
+}
+```
+
+In case of cors error
+
+```bash
+pm2 stop ducksay-express
+npm run dev
+Ctrl + C
+pm2 start ducksay-express
+```
