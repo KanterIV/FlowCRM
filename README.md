@@ -231,7 +231,9 @@ _Пользовтель веривицирован_
 }
 ```
 
-In case of cors error
+<br>
+
+## Кейс - cors error
 
 ```bash
 pm2 stop ducksay-express
