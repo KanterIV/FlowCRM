@@ -14,7 +14,8 @@
 **📥 Request Body**:
 
 ```ts
-{  email: string,
+{
+  email: string,
   password: string,
   telegram: string,
   whatsapp: string,
