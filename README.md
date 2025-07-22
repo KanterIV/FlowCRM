@@ -25,6 +25,8 @@
 }
 ```
 
+<br>
+
 **📥 Response**:
 
 ```ts
@@ -61,10 +63,12 @@
 
 ```ts
 {
-  userId: string;
-  verificationCode: string;
+  userId: string,
+  verificationCode: string,
 }
 ```
+
+<br>
 
 **📤 Response**:
 
@@ -92,6 +96,8 @@
   userId: string,
 }
 ```
+
+<br>
 
 **📤 Response**:
 
@@ -128,6 +134,8 @@
 }
 ```
 
+<br>
+
 **📤 Response**:
 
 _Пользовтель не верифицирован_
@@ -151,7 +159,7 @@ _Пользовтель веривицирован_
   code: number,
   message: string,
   data: {
-    token: string, // JWT
+    token: string,
   };
 }
 ```
