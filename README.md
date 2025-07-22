@@ -61,8 +61,8 @@
 
 ```ts
 {
-  userId: string;
-  verificationCode: string;
+  userId: string,
+  verificationCode: string,
 }
 ```
 
