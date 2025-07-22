@@ -1,49 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# REST API для [ducksay-pwa](https://ducksay-pwa.com/) приложения
 
-## Getting Started
+<br>
 
-First, run the development server:
+## Регистраци, верификация и авторизация юзера.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. ### 🔹 POST `/auth/register`
+
+Регистрирует нового пользователя. Выполняется хеширование пароля, создание
+пользователя в базе, генерация 6-значного кода и отправка его через доступный
+мессенджер (WhatsApp) для дальнейшей верификации. Также обрабатываются
+реферальные и промо-коды.
+
+**📥 Request Body**:
+
+```ts
+{
+  email: string,
+  password: string,
+  telegram: string,
+  whatsapp: string,
+  promoCode?: string,
+  referralCode?: string,
+  keitaro_subid?: string
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+**📥 Response**:
 
-You can start editing the page by modifying `app/page.tsx`. The page
-auto-updates as you edit the file.
+```ts
+{
+  message: string,
+  success: boolean,
+  data: {
+    email: string,
+    userId: string,
+    unusedPromocode: null | string //промокод возвращается в response если его илспользование на этапе регистрации невозможно (например ошибка сервера или промокод на депозит)
+  }
+}
+```
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-to automatically optimize and load [Geist](https://vercel.com/font), a new font
-family for Vercel.
+2. ### 🔹 POST `/auth/user-verification`
 
-## Learn More
+Подтверждает код верификации, отправленный пользователю после регистрации. В
+случае успеха пользователь считается верифицированным, и возвращается JWT-токен
+для авторизации.
 
-To learn more about Next.js, take a look at the following resources:
+> [!IMPORTANT] Так же во время верфикаци:
+>
+> - если код верификации устарел и был удален из базы - создается новый код,
+>   который юзер может повторно затребовать.
+> - после успешной верификации пользователя в Telegram bot отсылается
+>   уведомление об успешной регистрации нового пользователя для дальнейшего
+>   контакта с ним (функция sendLeadInfoInTelegram() )
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**📥 Request Body**:
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js) - your
-feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
-
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+```ts
+{
+  userId: string;
+  verificationCode: string;
+}
+```
