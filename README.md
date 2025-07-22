@@ -13,17 +13,7 @@
 
 **📥 Request Body**:
 
-```json
-{
-  "email": _string_,
-  "password": _string_,
-  "telegram": _string_,
-  "whatsapp": _string_,
-  "promoCode": _string_,
-  "referralCode": _string_,
-  "keitaro_subid": _string_
-}
-```
+{ **email**: _string_, **password**: _string_, telegram: _string_ (optional) }
 
 **📥 Response**:
 
