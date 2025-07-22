@@ -22,7 +22,7 @@
   promoCode?: string;
   referralCode?: string;
   keitaro_subid?: string;
-};
+}
 ```
 
 **📥 Response**:
