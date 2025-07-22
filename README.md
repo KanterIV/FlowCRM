@@ -13,16 +13,16 @@
 
 **📥 Request Body**:
 
-```json
-{
-  "email": "string",
-  "password": "string",
-  "telegram": "string",
-  "whatsapp": "string",
-  "promoCode": "string",
-  "referralCode": "string",
-  "keitaro_subid": "string"
-}
+```ts
+type RegisterRequest = {
+  email: string;
+  password: string;
+  telegram: string;
+  whatsapp: string;
+  promoCode?: string;
+  referralCode?: string;
+  keitaro_subid?: string;
+};
 ```
 
 **📥 Response**:
