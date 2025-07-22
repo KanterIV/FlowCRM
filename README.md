@@ -25,7 +25,7 @@
 }
 ```
 
-**📥 Response**:
+**📤 Response**:
 
 ```ts
 {
@@ -63,5 +63,18 @@
 {
   userId: string;
   verificationCode: string;
+}
+```
+
+**📤 Response**:
+
+```ts
+{
+  success: boolean,
+      code: number,
+      message: string,
+      data: {
+        token: string,
+      },
 }
 ```
