@@ -25,7 +25,7 @@
 }
 ```
 
-**📤 Response**:
+**📥 Response**:
 
 ```ts
 {
@@ -61,8 +61,8 @@
 
 ```ts
 {
-  userId: string,
-  verificationCode: string,
+  userId: string;
+  verificationCode: string;
 }
 ```
 
@@ -77,4 +77,37 @@
         token: string,
       },
 }
+```
+
+### 🔹 POST `/auth/resend-verification-code`
+
+Повторно отправляет 6-значный код верификации пользователю в один из доступных
+мессенджеров: Telegram или WhatsApp (в порядке приоритета). Используется, если
+код утерян или не дошёл при первичной регистрации.
+
+**📥 Request Body**:
+
+```ts
+{
+  userId: string;
+}
+```
+
+**📤 Response**:
+
+```ts
+{
+  success: boolean,
+  code: number,
+  message: string;
+}
+```
+
+In case of cors error
+
+```bash
+pm2 stop ducksay-express
+npm run dev
+Ctrl + C
+pm2 start ducksay-express
 ```
