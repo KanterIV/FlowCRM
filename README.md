@@ -14,7 +14,7 @@
 **📥 Request Body**:
 
 ```ts
-type RegisterRequest = {
+{
   email: string;
   password: string;
   telegram: string;
@@ -27,14 +27,14 @@ type RegisterRequest = {
 
 **📥 Response**:
 
-```json
+```ts
 {
-  "message": "string",
-  "success": boolean,
-  "data": {
-    "email": "string",
-    "userId": "string",
-    "unusedPromocode": null or "string" //промокод возвращается в response если его илспользование на этапе регистрации невозможно (например ошибка сервера или промокод на депозит)
+  message: string,
+  success: boolean,
+  data: {
+    email: string,
+    userId: string,
+    unusedPromocode: null | string //промокод возвращается в response если его илспользование на этапе регистрации невозможно (например ошибка сервера или промокод на депозит)
   }
 }
 ```
