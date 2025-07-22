@@ -1,7 +1,6 @@
 # REST API для [ducksay-pwa](https://ducksay-pwa.com/) приложения
 
 <br>
-<br>
 
 1. ## Регистраци, верификация и авторизация юзера.
 
