@@ -13,17 +13,28 @@
 
 **📥 Request Body**:
 
-{ **email**: _string_, **password**: _string_, telegram: _string_ (optional) }
+```json
+{
+  "email": "string",
+  "password": "string",
+  "telegram": "string",
+  "whatsapp": "string",
+  "promoCode": "string",
+  "referralCode": "string",
+  "keitaro_subid": "string"
+}
+```
 
 **📥 Response**:
 
 ```json
 {
-  "message": _string_,
-  "success": true,
+  "message": "string",
+  "success": boolean,
   "data": {
-    "email": _string_,
-    "userId": _string_
+    "email": "string",
+    "userId": "string",
+    "unusedPromocode": null or "string" //промокод возвращается в response если его илспользование на этапе регистрации невозможно (например ошибка сервера или промокод на депозит)
   }
 }
 ```
